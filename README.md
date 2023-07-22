@@ -49,7 +49,7 @@ The code is based on the deep learning framework from the Institute of Machine L
 <img src="https://github.com/ci-ber/RA/assets/106509806/844b35fa-0e3e-4b1c-8b4c-1adecae6703a">
 </p>
 
-#### Set up wandb (https://docs.wandb.ai/quickstart)
+#### 1). Set up wandb (https://docs.wandb.ai/quickstart)
 
 Sign up for a free account and login to your wandb account.
 ```bash
@@ -57,35 +57,55 @@ wandb login
 ```
 Paste the API key from https://wandb.ai/authorize when prompted.
 
-#### Clone repository
+#### 2). Clone repository
 
 ```bash
 git clone https://github.com/ci-ber/RA.git
 cd RA
 ```
 
-#### Install requirements
+#### 3). Create a virtual environment with the needed packages (use conda_environment-osx.yaml for macOS)
 
-```bash
-pip install -r requirements.txt
+```
+cd ${TARGET_DIR}/RA
+conda env create -f conda_environment.yaml
+source activate py308 *or* conda activate py308
 ```
 
-#### Download datasets 
+#### 4). Install PyTorch 
+
+> Example installation:
+
+* *with cuda*: 
+```
+pip3 install torch==1.9.1+cu111 torchvision==0.10.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+```
+* *w/o cuda*:
+```
+pip3 install torch==1.9.1 torchvision==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+#### 5). Download datasets 
 
 <h4 align="center"><a href="https://brain-development.org/ixi-dataset/">IXI</a> • <a href="https://fastmri.org">FastMRI</a> • <a href="https://github.com/microsoft/fastmri-plus"> Labels for FastMRI</a> </h4>
 
 > *Alternatively you can use your own mid-axial brain T1w slices with our <a href=""> pre-trained weights</a> or train from scratch on other anatomies and modalities.*
 
+> Move the datasets to the expected paths (listed in the data/splits csv files)
 
-#### Run the pipeline
+#### 6). Run the pipeline
 
-Run the main script with the corresponding config like this:
+> [Optional] set config 'task' to test and load model from ./weights/RA/best_model.pt
 
-```bash
-python core/Main.py --config_path ./projects/RA/ra.yaml
+```
+python core/Main.py --config_path projects/RA/configs/ra.yaml
 ```
 
-Refer to ra.yaml for the default configuration. Store the pre-trained model from <a href=""> HERE</a> into the specified directory to skip the training part.
+> Refer to *.yaml files for experiment configurations.
+
+
+
+# That's it, enjoy! :rocket:
 
 
 
