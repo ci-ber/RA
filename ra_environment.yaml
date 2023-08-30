@@ -109,7 +109,6 @@ dependencies:
     - termcolor==2.3.0
     - threadpoolctl==3.2.0
     - tifffile==2023.7.10
-    - torch==1.9.1+cu111
     - torchinfo==1.8.0
     - torchio==0.19.1
     - torchmetrics==1.1.1
