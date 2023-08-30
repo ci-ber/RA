@@ -90,6 +90,8 @@ pip3 install torch==1.9.1 torchvision==0.10.1 -f https://download.pytorch.org/wh
 > *Alternatively you can use your own mid-axial brain T1w slices with our pre-trained weights or train from scratch on other anatomies and modalities.*
 
 > Move the datasets to the expected paths (listed in the data/splits csv files)
+> 
+> Extract the middle axial slice and save as png images
 
 #### 6). Run the pipeline
 
