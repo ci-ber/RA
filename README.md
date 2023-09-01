@@ -95,7 +95,7 @@ pip3 install torch==1.9.1 torchvision==0.10.1 -f https://download.pytorch.org/wh
 
 #### 6). Run the pipeline
 
-> [Optional] set config 'task' to test and load model from ./weights/RA/best_model.pt
+> [Optional] set config 'task' to test and load model from  •  <a href="https://syncandshare.lrz.de/getlink/fi66pzBw7VbmC6eXjWKhya/23MIDL_RA_best_model.pt">here</a>  • 
 
 ```
 python core/Main.py --config_path projects/RA/configs/fast_mri/ra.yaml
